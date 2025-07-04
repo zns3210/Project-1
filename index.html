@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ink Vision</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: url('background.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .flaming-title {
+      font-size: 32px;
+      color: transparent;
+      background-image: linear-gradient(90deg, red, orange, yellow);
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: flameText 1.5s infinite alternate;
+    }
+
+    @keyframes flameText {
+      from {
+        text-shadow: 0 0 5px red, 0 0 10px orange, 0 0 20px yellow;
+      }
+      to {
+        text-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
+      }
+    }
+
+    nav button {
+      margin-left: 10px;
+      padding: 10px 16px;
+      background: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    nav button:hover {
+      background: #555;
+    }
+
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      font-weight: bold;
+      font-style: italic;
+      color: black;
+      text-shadow: 2px 2px 4px white;
+    }
+
+    p {
+      max-width: 700px;
+      margin: 0 auto 25px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      font-style: italic;
+      font-weight: bold;
+      color: black;
+      text-shadow: 2px 2px 4px white;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .gallery figure {
+      margin: 0;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      transition: all 0.7s ease;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.7), 0 0 50px rgba(255, 255, 255, 0.5);
+    }
+
+    .gallery img:hover {
+      box-shadow: 0 0 50px rgba(255, 255, 255, 1), 0 0 80px rgba(255, 255, 255, 0.9);
+      transform: scale(1.05);
+    }
+
+    .gallery figcaption {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      font-style: italic;
+      line-height: 1.5;
+      color: white;
+      text-shadow: 1px 1px 3px black;
+    }
+
+    .gallery figcaption strong {
+      font-style: normal;
+      font-weight: bold;
+    }
+
+    img.main-image {
+      width: 300px;
+      height: auto;
+      margin: 20px auto;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+      animation: rotateY 15s infinite linear;
+      border: 4px solid gold;
+    }
+
+    @keyframes rotateY {
+      from { transform: rotateY(0deg); }
+      to { transform: rotateY(360deg); }
+    }
+
+    .flames {
+      padding: 30px;
+      border: 2px solid orange;
+      background: linear-gradient(45deg, red, orange, yellow);
+      color: white;
+      text-shadow: 1px 1px 2px black;
+      box-shadow: 0 0 25px orange;
+    }
+
+    a.contact-link {
+      display: inline-block;
+      margin: 10px;
+      text-decoration: none;
+      color: #333;
+      background: #fff;
+      padding: 10px 15px;
+      border: 2px solid #333;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    a.contact-link:hover {
+      background: #333;
+      color: #fff;
+    }
+
+    footer {
+      background: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      box-shadow: 0 -1px 6px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 class="flaming-title">Ink Vision</h1>
+    <nav>
+      <button onclick="showExplore()">Explore</button>
+      <button onclick="document.getElementById('work').scrollIntoView()">Our Work</button>
+      <button onclick="document.getElementById('contact').scrollIntoView()">Contact</button>
+      <button onclick="location.href='about.html'">About Us</button>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h2>Welcome to Ink Vision</h2>
+    <p>Showcasing timeless football art and emotion through creative design. Our digital ink captures the soul of the game.</p>
+    <img class="main-image" src="messi.jpeg" alt="Messi Calm Before the Storm">
+  </section>
+
+  <section id="work" class="flames">
+    <h2>Our Work</h2>
+    <p>We design nostalgic, vintage, and comic-style football posters and wallpapers that speak to the heart of fans worldwide.</p>
+    <div class="gallery">
+      <figure>
+        <img src="poster1.jpeg" alt="Poster 1">
+        <figcaption><em>"The more difficult the victory, the greater the happiness in winning."</em><br><strong>– Pelé</strong></figcaption>
+      </figure>
+      <figure>
+        <img src="poster2.jpeg" alt="Poster 2">
+        <figcaption><em>"I start early and I stay late, day after day, year after year."</em><br><strong>– Messi</strong></figcaption>
+      </figure>
+      <figure>
+        <img src="poster3.jpeg" alt="Poster 3">
+        <figcaption><em>"Success is no accident. It is hard work, perseverance, and sacrifice."</em><br><strong>– Pelé</strong></figcaption>
+      </figure>
+      <figure>
+        <img src="poster4.jpeg" alt="Poster 4">
+        <figcaption><em>"Talent without working hard is nothing."</em><br><strong>– Cristiano Ronaldo</strong></figcaption>
+      </figure>
+      <figure>
+        <img src="poster5.jpeg" alt="Poster 5">
+        <figcaption><em>"If you do not believe you can do it then you have no chance at all."</em><br><strong>– Arsène Wenger</strong></figcaption>
+      </figure>
+      <figure>
+        <img src="poster6.jpeg" alt="Poster 6">
+        <figcaption><em>"Everything is practice."</em><br><strong>– Pelé</strong></figcaption>
+      </figure>
+      <figure>
+        <img src="poster7.jpeg" alt="Poster 7">
+        <figcaption><em>"Dream big. Work hard. Stay focused."</em><br><strong>– Kylian Mbappé</strong></figcaption>
+      </figure>
+      <figure>
+        <img src="poster8.jpeg" alt="Poster 8">
+        <figcaption><em>"Football is a game of mistakes. Whoever makes the fewest wins."</em><br><strong>– Johan Cruyff</strong></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>We'd love to connect with you:</p>
+    <a class="contact-link" href="https://wa.me/918788802941" target="_blank">📱 WhatsApp</a>
+    <a class="contact-link" href="https://instagram.com/inkvision_" target="_blank">📸 Instagram</a>
+  </section>
+
+  <footer>
+    &copy; 2025 Ink Vision. Designed with love for the game.
+  </footer>
+
+  <script>
+    function showExplore() {
+      alert("Explore the magic of Ink Vision – Posters, Fire & Ice!");
+      document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
