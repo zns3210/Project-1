@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Ink Vision</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      background: url('me.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .content {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+      max-width: 800px;
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid #00c6ff;
+      box-shadow: 0 0 20px rgba(0,198,255,0.7);
+      margin-bottom: 20px;
+      animation: floatPic 4s ease-in-out infinite;
+      cursor: pointer;
+    }
+
+    @keyframes floatPic {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, #00d2ff, #ff6a00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <img src="me.jpeg" alt="Zaheer" class="profile-pic" id="profilePic">
+    <h1>About Me</h1>
+    <p>
+      I'm Zaheer, the creative mind behind <strong>Ink Vision</strong>. Passionate about football and design,
+      I blend the fire of emotion with the chill of nostalgia to create bold, inspiring artwork.
+    </p>
+    <p>
+      Every poster, wallpaper, and graphic I make carries a story, a moment, and a memory.
+      Ink Vision is not just a name — it's a lens to view the beautiful game in all its raw and artistic glory.
+    </p>
+    <p>
+      Follow the journey, support the vision, and join the family of fans who feel football through art.
+    </p>
+  </div>
+
+  <script>
+    // JavaScript to show message when clicking the profile image
+    document.getElementById("profilePic").addEventListener("click", function() {
+      alert("Hey, I'm Zaheer – Welcome to Ink Vision!");
+    });
+  </script>
+</body>
+</html>
